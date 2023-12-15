@@ -44,7 +44,7 @@
                         <i class="fa-solid fa-user"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: -105px;">
-                        <li><a class="dropdown-item" href="index.html"> Switch to Buyer </a>
+                        <li><a class="dropdown-item" href="sellerLogin.html"> Switch to Buyer </a>
                         </li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout </a>
                         </li>
@@ -98,6 +98,88 @@
                             </p>
                         </a>
                     </li>
+                    <!-- 4 -->
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="toggleDropdown()">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <p>
+                                Order
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview-dropdown">
+                            <!-- 1 -->
+                            <li class="nav-item">
+                                <a href="pending.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Pending groups</p>
+                                </a>
+                            </li>
+                            <!-- 2 -->
+                            <li class="nav-item">
+                                <a href="earnings.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Earnings</p>
+                                </a>
+                            </li>
+                            <!-- 3 -->
+                            <li class="nav-item">
+                                <a href="progress.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>In progress</p>
+                                </a>
+                            </li>
+                            <!-- 4 -->
+                            <li class="nav-item">
+                                <a href="finished.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Finished</p>
+                                </a>
+                            </li>
+                            <!-- 5 -->
+                            <li class="nav-item">
+                                <a href="canceled.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Canceled</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 5 -->
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="toggleDropdown2()">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>
+                                Sales
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview-dropdown-2">
+                            <!-- 1 -->
+                            <li class="nav-item">
+                                <a href="sponsoredProd.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sponsored Products</p>
+                                </a>
+                            </li>
+                            <!-- 2 -->
+                            <li class="nav-item">
+                                <a href="articles.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Articles</p>
+                                </a>
+                            </li>
+                            <!-- 3 -->
+                            <li class="nav-item">
+                                <a href="salesHistory.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sales History</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -117,8 +199,8 @@
                         <div class="small-box bg-warning">
                             <div class="inner">
                                 <div>TOTAL PENDING GROUPS</div>
-                                <div class="fw-bold mt-2">0</div>                       
-                            </div>     
+                                <div class="fw-bold mt-2">0</div>
+                            </div>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -127,7 +209,7 @@
                         <div class="small-box bg-success">
                             <div class="inner">
                                 <div>TOTAL ORDERS IN PROCESS</div>
-                                <div class="fw-bold mt-2">0</div>     
+                                <div class="fw-bold mt-2">0</div>
                             </div>
                         </div>
                     </div>
@@ -137,7 +219,7 @@
                         <div class="small-box bg-danger">
                             <div class="inner">
                                 <div>TOTAL COMPLETED ORDERS</div>
-                                <div class="fw-bold mt-2">0</div>     
+                                <div class="fw-bold mt-2">0</div>
                             </div>
                         </div>
                     </div>
@@ -147,7 +229,7 @@
 
             <div class="container-fluid">
                 <!-- /.card -->
-    
+
                 <div class="card">
                     <div class="card-header border-0">
                         <h3 class="card-title">Products</h3>
@@ -195,36 +277,37 @@
                                     </td>
                                     <td>
                                         4
-                                    </td>                               
+                                    </td>
                                     <td>
-                                       19
+                                        19
                                     </td>
                                     <td>
                                         8942
-                                    </td>                             
+                                    </td>
                                     <td>
                                         3708
-                                    </td>                             
+                                    </td>
                                     <td>
                                         26248
-                                    </td>                             
+                                    </td>
                                     <td>
                                         3
-                                    </td>                             
+                                    </td>
                                     <td>
                                         2
-                                    </td>                             
+                                    </td>
                                     <td>
                                         News and Politics
-                                    </td>                             
+                                    </td>
                                     <td>
                                         €15
-                                    </td>  
+                                    </td>
                                     <td>
                                         <!-- Button trigger modal 1 -->
                                         <button class="btn btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal1"><i class="fa-solid fa-info-circle"></i></button>
-    
+                                            data-bs-target="#exampleModal1"><i
+                                                class="fa-solid fa-info-circle"></i></button>
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal1" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -238,7 +321,8 @@
                                                     <div class="modal-body">
                                                         <div class="d-flex justify-content-between">
                                                             <div>
-                                                                <div><span class="fw-bold">Medium: </span>Global Chronicle
+                                                                <div><span class="fw-bold">Medium: </span>Global
+                                                                    Chronicle
                                                                     El Español</div>
                                                                 <div><span class="fw-bold">URL: </span><a
                                                                         href="https://cronicaglobal.elespanol.com/"
@@ -247,7 +331,8 @@
                                                                 <div><span class="fw-bold">Type: </span>Newspaper</div>
                                                                 <div><span class="fw-bold">Country: </span>Spain</div>
                                                                 <div><span class="fw-bold">Language: </span>IS</div>
-                                                                <div><span class="fw-bold">Indicates Sponsored: </span>Yeah
+                                                                <div><span class="fw-bold">Indicates Sponsored:
+                                                                    </span>Yeah
                                                                 </div>
                                                                 <div><span class="fw-bold">IP: </span>51.210.0.138</div>
                                                                 <div><span class="fw-bold">Maximum Links: </span>2</div>
@@ -277,7 +362,8 @@
                                                                     class="badge bg-green text-white">Babbies and
                                                                     Children</span> <span
                                                                     class="badge bg-green text-white">Beauty</span>
-                                                                <span class="badge bg-green text-white">Cinema and TV</span>
+                                                                <span class="badge bg-green text-white">Cinema and
+                                                                    TV</span>
                                                                 <span class="badge bg-green text-white">Cooking and
                                                                     gastronomy</span>
                                                             </div>
@@ -285,10 +371,13 @@
                                                         <div class="mt-4">
                                                             <label for="" class="mb-0">Rejected Projects</label>
                                                             <div class="mt-2 border p-2">
-                                                                <span class="badge badge-danger">Betting and casino</span> <span
-                                                                    class="badge badge-danger">Company (Advertising)</span> <span
+                                                                <span class="badge badge-danger">Betting and
+                                                                    casino</span> <span
+                                                                    class="badge badge-danger">Company
+                                                                    (Advertising)</span> <span
                                                                     class="badge badge-danger">Dating</span>
-                                                                <span class="badge badge-danger">News and Politics</span>
+                                                                <span class="badge badge-danger">News and
+                                                                    Politics</span>
                                                                 <span class="badge badge-danger">Others</span>
                                                             </div>
                                                         </div>
@@ -296,12 +385,12 @@
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                         <!-- Button trigger modal 2 -->
                                         <button class="btn btn-info" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal"><i
                                                 class="fa-solid fa-cart-shopping"></i></button>
-    
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -315,26 +404,31 @@
                                                     <div class="modal-body">
                                                         <div
                                                             class="bg-green text-white text-center align-items-center rounded py-3">
-                                                            The price of this purchase is €395.00 regardless of the number
+                                                            The price of this purchase is €395.00 regardless of the
+                                                            number
                                                             of links
                                                         </div>
                                                         <form>
                                                             <fieldset>
                                                                 <div class="mb-3">
-                                                                    <label for="disabledTextInput" class="form-label">Other
+                                                                    <label for="disabledTextInput"
+                                                                        class="form-label">Other
                                                                         Details</label>
                                                                     <input type="text" id="disabledTextInput"
-                                                                        class="form-control" placeholder="Disabled input">
+                                                                        class="form-control"
+                                                                        placeholder="Disabled input">
                                                                 </div>
                                                                 <div class="mb-3 form-check">
                                                                     <input type="checkbox" class="form-check-input"
                                                                         id="exampleCheck1">
                                                                     <label class="form-check-label"
-                                                                        for="exampleCheck1">Extra: Hire writing Plus (+€5)
+                                                                        for="exampleCheck1">Extra: Hire writing Plus
+                                                                        (+€5)
                                                                         <i class="fa-solid fa-info-circle"></i></label>
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label for="disabledSelect" class="form-label">Select
+                                                                    <label for="disabledSelect"
+                                                                        class="form-label">Select
                                                                         the number of links</label>
                                                                     <select id="disabledSelect" class="form-select">
                                                                         <option>Select</option>
@@ -351,13 +445,14 @@
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">Close</button>
                                                         <button type="button" class="btn btn-primary"><i
-                                                                class="fa-solid fa-newspaper"></i> Recharge Balance</button>
+                                                                class="fa-solid fa-newspaper"></i> Recharge
+                                                            Balance</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>    
-                                </tr>                       
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <i class="fa-regular fa-star"></i>
@@ -372,36 +467,37 @@
                                     </td>
                                     <td>
                                         4
-                                    </td>                               
+                                    </td>
                                     <td>
-                                       19
+                                        19
                                     </td>
                                     <td>
                                         8942
-                                    </td>                             
+                                    </td>
                                     <td>
                                         3708
-                                    </td>                             
+                                    </td>
                                     <td>
                                         26248
-                                    </td>                             
+                                    </td>
                                     <td>
                                         3
-                                    </td>                             
+                                    </td>
                                     <td>
                                         2
-                                    </td>                             
+                                    </td>
                                     <td>
                                         News and Politics
-                                    </td>                             
+                                    </td>
                                     <td>
                                         €15
-                                    </td>  
+                                    </td>
                                     <td>
                                         <!-- Button trigger modal 1 -->
                                         <button class="btn btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal1"><i class="fa-solid fa-info-circle"></i></button>
-    
+                                            data-bs-target="#exampleModal1"><i
+                                                class="fa-solid fa-info-circle"></i></button>
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal1" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -415,7 +511,8 @@
                                                     <div class="modal-body">
                                                         <div class="d-flex justify-content-between">
                                                             <div>
-                                                                <div><span class="fw-bold">Medium: </span>Global Chronicle
+                                                                <div><span class="fw-bold">Medium: </span>Global
+                                                                    Chronicle
                                                                     El Español</div>
                                                                 <div><span class="fw-bold">URL: </span><a
                                                                         href="https://cronicaglobal.elespanol.com/"
@@ -424,7 +521,8 @@
                                                                 <div><span class="fw-bold">Type: </span>Newspaper</div>
                                                                 <div><span class="fw-bold">Country: </span>Spain</div>
                                                                 <div><span class="fw-bold">Language: </span>IS</div>
-                                                                <div><span class="fw-bold">Indicates Sponsored: </span>Yeah
+                                                                <div><span class="fw-bold">Indicates Sponsored:
+                                                                    </span>Yeah
                                                                 </div>
                                                                 <div><span class="fw-bold">IP: </span>51.210.0.138</div>
                                                                 <div><span class="fw-bold">Maximum Links: </span>2</div>
@@ -454,7 +552,8 @@
                                                                     class="badge bg-green text-white">Babbies and
                                                                     Children</span> <span
                                                                     class="badge bg-green text-white">Beauty</span>
-                                                                <span class="badge bg-green text-white">Cinema and TV</span>
+                                                                <span class="badge bg-green text-white">Cinema and
+                                                                    TV</span>
                                                                 <span class="badge bg-green text-white">Cooking and
                                                                     gastronomy</span>
                                                             </div>
@@ -462,10 +561,13 @@
                                                         <div class="mt-4">
                                                             <label for="" class="mb-0">Rejected Projects</label>
                                                             <div class="mt-2 border p-2">
-                                                                <span class="badge badge-danger">Betting and casino</span> <span
-                                                                    class="badge badge-danger">Company (Advertising)</span> <span
+                                                                <span class="badge badge-danger">Betting and
+                                                                    casino</span> <span
+                                                                    class="badge badge-danger">Company
+                                                                    (Advertising)</span> <span
                                                                     class="badge badge-danger">Dating</span>
-                                                                <span class="badge badge-danger">News and Politics</span>
+                                                                <span class="badge badge-danger">News and
+                                                                    Politics</span>
                                                                 <span class="badge badge-danger">Others</span>
                                                             </div>
                                                         </div>
@@ -473,12 +575,12 @@
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                         <!-- Button trigger modal 2 -->
                                         <button class="btn btn-info" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal"><i
                                                 class="fa-solid fa-cart-shopping"></i></button>
-    
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -492,26 +594,31 @@
                                                     <div class="modal-body">
                                                         <div
                                                             class="bg-green text-white text-center align-items-center rounded py-3">
-                                                            The price of this purchase is €395.00 regardless of the number
+                                                            The price of this purchase is €395.00 regardless of the
+                                                            number
                                                             of links
                                                         </div>
                                                         <form>
                                                             <fieldset>
                                                                 <div class="mb-3">
-                                                                    <label for="disabledTextInput" class="form-label">Other
+                                                                    <label for="disabledTextInput"
+                                                                        class="form-label">Other
                                                                         Details</label>
                                                                     <input type="text" id="disabledTextInput"
-                                                                        class="form-control" placeholder="Disabled input">
+                                                                        class="form-control"
+                                                                        placeholder="Disabled input">
                                                                 </div>
                                                                 <div class="mb-3 form-check">
                                                                     <input type="checkbox" class="form-check-input"
                                                                         id="exampleCheck1">
                                                                     <label class="form-check-label"
-                                                                        for="exampleCheck1">Extra: Hire writing Plus (+€5)
+                                                                        for="exampleCheck1">Extra: Hire writing Plus
+                                                                        (+€5)
                                                                         <i class="fa-solid fa-info-circle"></i></label>
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label for="disabledSelect" class="form-label">Select
+                                                                    <label for="disabledSelect"
+                                                                        class="form-label">Select
                                                                         the number of links</label>
                                                                     <select id="disabledSelect" class="form-select">
                                                                         <option>Select</option>
@@ -528,13 +635,14 @@
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">Close</button>
                                                         <button type="button" class="btn btn-primary"><i
-                                                                class="fa-solid fa-newspaper"></i> Recharge Balance</button>
+                                                                class="fa-solid fa-newspaper"></i> Recharge
+                                                            Balance</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>    
-                                </tr>                       
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <i class="fa-regular fa-star"></i>
@@ -549,36 +657,37 @@
                                     </td>
                                     <td>
                                         4
-                                    </td>                               
+                                    </td>
                                     <td>
-                                       19
+                                        19
                                     </td>
                                     <td>
                                         8942
-                                    </td>                             
+                                    </td>
                                     <td>
                                         3708
-                                    </td>                             
+                                    </td>
                                     <td>
                                         26248
-                                    </td>                             
+                                    </td>
                                     <td>
                                         3
-                                    </td>                             
+                                    </td>
                                     <td>
                                         2
-                                    </td>                             
+                                    </td>
                                     <td>
                                         News and Politics
-                                    </td>                             
+                                    </td>
                                     <td>
                                         €15
-                                    </td>  
+                                    </td>
                                     <td>
                                         <!-- Button trigger modal 1 -->
                                         <button class="btn btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal1"><i class="fa-solid fa-info-circle"></i></button>
-    
+                                            data-bs-target="#exampleModal1"><i
+                                                class="fa-solid fa-info-circle"></i></button>
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal1" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -592,7 +701,8 @@
                                                     <div class="modal-body">
                                                         <div class="d-flex justify-content-between">
                                                             <div>
-                                                                <div><span class="fw-bold">Medium: </span>Global Chronicle
+                                                                <div><span class="fw-bold">Medium: </span>Global
+                                                                    Chronicle
                                                                     El Español</div>
                                                                 <div><span class="fw-bold">URL: </span><a
                                                                         href="https://cronicaglobal.elespanol.com/"
@@ -601,7 +711,8 @@
                                                                 <div><span class="fw-bold">Type: </span>Newspaper</div>
                                                                 <div><span class="fw-bold">Country: </span>Spain</div>
                                                                 <div><span class="fw-bold">Language: </span>IS</div>
-                                                                <div><span class="fw-bold">Indicates Sponsored: </span>Yeah
+                                                                <div><span class="fw-bold">Indicates Sponsored:
+                                                                    </span>Yeah
                                                                 </div>
                                                                 <div><span class="fw-bold">IP: </span>51.210.0.138</div>
                                                                 <div><span class="fw-bold">Maximum Links: </span>2</div>
@@ -631,7 +742,8 @@
                                                                     class="badge bg-green text-white">Babbies and
                                                                     Children</span> <span
                                                                     class="badge bg-green text-white">Beauty</span>
-                                                                <span class="badge bg-green text-white">Cinema and TV</span>
+                                                                <span class="badge bg-green text-white">Cinema and
+                                                                    TV</span>
                                                                 <span class="badge bg-green text-white">Cooking and
                                                                     gastronomy</span>
                                                             </div>
@@ -639,10 +751,13 @@
                                                         <div class="mt-4">
                                                             <label for="" class="mb-0">Rejected Projects</label>
                                                             <div class="mt-2 border p-2">
-                                                                <span class="badge badge-danger">Betting and casino</span> <span
-                                                                    class="badge badge-danger">Company (Advertising)</span> <span
+                                                                <span class="badge badge-danger">Betting and
+                                                                    casino</span> <span
+                                                                    class="badge badge-danger">Company
+                                                                    (Advertising)</span> <span
                                                                     class="badge badge-danger">Dating</span>
-                                                                <span class="badge badge-danger">News and Politics</span>
+                                                                <span class="badge badge-danger">News and
+                                                                    Politics</span>
                                                                 <span class="badge badge-danger">Others</span>
                                                             </div>
                                                         </div>
@@ -650,12 +765,12 @@
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                         <!-- Button trigger modal 2 -->
                                         <button class="btn btn-info" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal"><i
                                                 class="fa-solid fa-cart-shopping"></i></button>
-    
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -669,26 +784,31 @@
                                                     <div class="modal-body">
                                                         <div
                                                             class="bg-green text-white text-center align-items-center rounded py-3">
-                                                            The price of this purchase is €395.00 regardless of the number
+                                                            The price of this purchase is €395.00 regardless of the
+                                                            number
                                                             of links
                                                         </div>
                                                         <form>
                                                             <fieldset>
                                                                 <div class="mb-3">
-                                                                    <label for="disabledTextInput" class="form-label">Other
+                                                                    <label for="disabledTextInput"
+                                                                        class="form-label">Other
                                                                         Details</label>
                                                                     <input type="text" id="disabledTextInput"
-                                                                        class="form-control" placeholder="Disabled input">
+                                                                        class="form-control"
+                                                                        placeholder="Disabled input">
                                                                 </div>
                                                                 <div class="mb-3 form-check">
                                                                     <input type="checkbox" class="form-check-input"
                                                                         id="exampleCheck1">
                                                                     <label class="form-check-label"
-                                                                        for="exampleCheck1">Extra: Hire writing Plus (+€5)
+                                                                        for="exampleCheck1">Extra: Hire writing Plus
+                                                                        (+€5)
                                                                         <i class="fa-solid fa-info-circle"></i></label>
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label for="disabledSelect" class="form-label">Select
+                                                                    <label for="disabledSelect"
+                                                                        class="form-label">Select
                                                                         the number of links</label>
                                                                     <select id="disabledSelect" class="form-select">
                                                                         <option>Select</option>
@@ -705,13 +825,14 @@
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">Close</button>
                                                         <button type="button" class="btn btn-primary"><i
-                                                                class="fa-solid fa-newspaper"></i> Recharge Balance</button>
+                                                                class="fa-solid fa-newspaper"></i> Recharge
+                                                            Balance</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>    
-                                </tr>                       
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <i class="fa-regular fa-star"></i>
@@ -726,36 +847,37 @@
                                     </td>
                                     <td>
                                         4
-                                    </td>                               
+                                    </td>
                                     <td>
-                                       19
+                                        19
                                     </td>
                                     <td>
                                         8942
-                                    </td>                             
+                                    </td>
                                     <td>
                                         3708
-                                    </td>                             
+                                    </td>
                                     <td>
                                         26248
-                                    </td>                             
+                                    </td>
                                     <td>
                                         3
-                                    </td>                             
+                                    </td>
                                     <td>
                                         2
-                                    </td>                             
+                                    </td>
                                     <td>
                                         News and Politics
-                                    </td>                             
+                                    </td>
                                     <td>
                                         €15
-                                    </td>  
+                                    </td>
                                     <td>
                                         <!-- Button trigger modal 1 -->
                                         <button class="btn btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal1"><i class="fa-solid fa-info-circle"></i></button>
-    
+                                            data-bs-target="#exampleModal1"><i
+                                                class="fa-solid fa-info-circle"></i></button>
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal1" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -769,7 +891,8 @@
                                                     <div class="modal-body">
                                                         <div class="d-flex justify-content-between">
                                                             <div>
-                                                                <div><span class="fw-bold">Medium: </span>Global Chronicle
+                                                                <div><span class="fw-bold">Medium: </span>Global
+                                                                    Chronicle
                                                                     El Español</div>
                                                                 <div><span class="fw-bold">URL: </span><a
                                                                         href="https://cronicaglobal.elespanol.com/"
@@ -778,7 +901,8 @@
                                                                 <div><span class="fw-bold">Type: </span>Newspaper</div>
                                                                 <div><span class="fw-bold">Country: </span>Spain</div>
                                                                 <div><span class="fw-bold">Language: </span>IS</div>
-                                                                <div><span class="fw-bold">Indicates Sponsored: </span>Yeah
+                                                                <div><span class="fw-bold">Indicates Sponsored:
+                                                                    </span>Yeah
                                                                 </div>
                                                                 <div><span class="fw-bold">IP: </span>51.210.0.138</div>
                                                                 <div><span class="fw-bold">Maximum Links: </span>2</div>
@@ -808,7 +932,8 @@
                                                                     class="badge bg-green text-white">Babbies and
                                                                     Children</span> <span
                                                                     class="badge bg-green text-white">Beauty</span>
-                                                                <span class="badge bg-green text-white">Cinema and TV</span>
+                                                                <span class="badge bg-green text-white">Cinema and
+                                                                    TV</span>
                                                                 <span class="badge bg-green text-white">Cooking and
                                                                     gastronomy</span>
                                                             </div>
@@ -816,10 +941,13 @@
                                                         <div class="mt-4">
                                                             <label for="" class="mb-0">Rejected Projects</label>
                                                             <div class="mt-2 border p-2">
-                                                                <span class="badge badge-danger">Betting and casino</span> <span
-                                                                    class="badge badge-danger">Company (Advertising)</span> <span
+                                                                <span class="badge badge-danger">Betting and
+                                                                    casino</span> <span
+                                                                    class="badge badge-danger">Company
+                                                                    (Advertising)</span> <span
                                                                     class="badge badge-danger">Dating</span>
-                                                                <span class="badge badge-danger">News and Politics</span>
+                                                                <span class="badge badge-danger">News and
+                                                                    Politics</span>
                                                                 <span class="badge badge-danger">Others</span>
                                                             </div>
                                                         </div>
@@ -827,12 +955,12 @@
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                         <!-- Button trigger modal 2 -->
                                         <button class="btn btn-info" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal"><i
                                                 class="fa-solid fa-cart-shopping"></i></button>
-    
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -846,26 +974,31 @@
                                                     <div class="modal-body">
                                                         <div
                                                             class="bg-green text-white text-center align-items-center rounded py-3">
-                                                            The price of this purchase is €395.00 regardless of the number
+                                                            The price of this purchase is €395.00 regardless of the
+                                                            number
                                                             of links
                                                         </div>
                                                         <form>
                                                             <fieldset>
                                                                 <div class="mb-3">
-                                                                    <label for="disabledTextInput" class="form-label">Other
+                                                                    <label for="disabledTextInput"
+                                                                        class="form-label">Other
                                                                         Details</label>
                                                                     <input type="text" id="disabledTextInput"
-                                                                        class="form-control" placeholder="Disabled input">
+                                                                        class="form-control"
+                                                                        placeholder="Disabled input">
                                                                 </div>
                                                                 <div class="mb-3 form-check">
                                                                     <input type="checkbox" class="form-check-input"
                                                                         id="exampleCheck1">
                                                                     <label class="form-check-label"
-                                                                        for="exampleCheck1">Extra: Hire writing Plus (+€5)
+                                                                        for="exampleCheck1">Extra: Hire writing Plus
+                                                                        (+€5)
                                                                         <i class="fa-solid fa-info-circle"></i></label>
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label for="disabledSelect" class="form-label">Select
+                                                                    <label for="disabledSelect"
+                                                                        class="form-label">Select
                                                                         the number of links</label>
                                                                     <select id="disabledSelect" class="form-select">
                                                                         <option>Select</option>
@@ -882,45 +1015,46 @@
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">Close</button>
                                                         <button type="button" class="btn btn-primary"><i
-                                                                class="fa-solid fa-newspaper"></i> Recharge Balance</button>
+                                                                class="fa-solid fa-newspaper"></i> Recharge
+                                                            Balance</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>    
-                                </tr>                      
-                                                   
+                                    </td>
+                                </tr>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <!-- /.card -->
             </div>
-    
+
             <div class="mt-3 container-fluid">
                 <div class="d-flex justify-content-between">
                     <div>Showing result of 1 out of 100</div>
                     <div>
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                              <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                  <span aria-hidden="true">&laquo;</span>
-                                </a>
-                              </li>
-                              <li class="page-item"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                  <span aria-hidden="true">&raquo;</span>
-                                </a>
-                              </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
                             </ul>
-                          </nav>
+                        </nav>
                     </div>
                 </div>
-    
+
                 <!-- footer -->
                 <footer>
                     <div class="d-flex justify-content-end">
@@ -941,7 +1075,7 @@
                         </ul>
                     </div>
                 </footer>
-        </div>
+            </div>
     </section>
     <!-- content end -->
 
@@ -965,6 +1099,14 @@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.nav-treeview-dropdown');
+            dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        }
+        function toggleDropdown2() {
+            var dropdown = document.querySelector('.nav-treeview-dropdown-2');
+            dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        }
     </script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

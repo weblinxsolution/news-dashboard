@@ -43,8 +43,8 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-user"></i>
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: -105px;">                       
-                        <li><a class="dropdown-item" href="index.html"> Switch to Buyer </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: -105px;">
+                        <li><a class="dropdown-item" href="sellerLogin.html"> Switch to Buyer </a>
                         </li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout </a>
                         </li>
@@ -98,6 +98,88 @@
                             </p>
                         </a>
                     </li>
+                    <!-- 4 -->
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="toggleDropdown()">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <p>
+                                Order
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview-dropdown">
+                            <!-- 1 -->
+                            <li class="nav-item">
+                                <a href="pending.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Pending groups</p>
+                                </a>
+                            </li>
+                            <!-- 2 -->
+                            <li class="nav-item">
+                                <a href="earnings.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Earnings</p>
+                                </a>
+                            </li>
+                            <!-- 3 -->
+                            <li class="nav-item">
+                                <a href="progress.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>In progress</p>
+                                </a>
+                            </li>
+                            <!-- 4 -->
+                            <li class="nav-item">
+                                <a href="finished.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Finished</p>
+                                </a>
+                            </li>
+                            <!-- 5 -->
+                            <li class="nav-item">
+                                <a href="canceled.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Canceled</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 5 -->
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="toggleDropdown2()">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>
+                                Sales
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview-dropdown-2">
+                            <!-- 1 -->
+                            <li class="nav-item">
+                                <a href="sponsoredProd.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sponsored Products</p>
+                                </a>
+                            </li>
+                            <!-- 2 -->
+                            <li class="nav-item">
+                                <a href="articles.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Articles</p>
+                                </a>
+                            </li>
+                            <!-- 3 -->
+                            <li class="nav-item">
+                                <a href="salesHistory.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sales History</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -114,25 +196,29 @@
                         <div class="container-fluid d-flex justify-content-between">
                             <h1 class="display-6">1. Enter URL</h1>
                             <div class="my-auto">
-                                <a href="index2.html" class="btn text-white bg-black"><i class="fa-solid fa-arrow-left"></i>
+                                <a href="index2.html" class="btn text-white bg-black"><i
+                                        class="fa-solid fa-arrow-left"></i>
                                     Cancel</a>
                             </div>
                         </div>
                     </div>
-        
+
                     <div class="container-fluid">
                         <div class="alert bg-primary text-center" role="alert">
-                            <span class="fw-bold">Important:</span> We do not accept link farms, review farms, websites with
+                            <span class="fw-bold">Important:</span> We do not accept link farms, review farms, websites
+                            with
                             duplicate or low quality content.
                         </div>
-        
+
                         <div class="mb-3">
                             <label for="url">URL of your website <span class="text-green">*</span></label>
                             <input type="text" id="url" class="form-control" placeholder="http://www.pressrelease.com">
                         </div>
                         <div class="mb-3 d-flex justify-content-between">
-                            <a href="" class="btn border text-black rounded"><i class="fa-solid fa-forward"></i> Skip</a>
-                            <a href="completeData.html" class="btn btn-info"><i class="fa-solid fa-arrow-right"></i> Next</a>
+                            <a href="" class="btn border text-black rounded"><i class="fa-solid fa-forward"></i>
+                                Skip</a>
+                            <a href="completeData.html" class="btn btn-info"><i class="fa-solid fa-arrow-right"></i>
+                                Next</a>
                         </div>
                     </div>
 
@@ -180,6 +266,14 @@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.nav-treeview-dropdown');
+            dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        }
+        function toggleDropdown2() {
+            var dropdown = document.querySelector('.nav-treeview-dropdown-2');
+            dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        }
     </script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

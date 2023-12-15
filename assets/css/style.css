@@ -54,6 +54,25 @@
     background-color: #FBF9F6;
 }
 
+.nav-treeview-dropdown {
+    display: none;
+}
+
+.hover:hover {
+    color: white !important;
+}
+
+.mar-border {
+    border-radius: 20px;
+    margin-top: 160px;
+}
+
+@media (min-width: 991px) {
+    .w-lg-50 {
+        width: 50%;
+    }
+}
+
 @media(max-width: 600px) {
     .over-hidden {
         overflow: auto;

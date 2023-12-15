@@ -44,7 +44,7 @@
                         <i class="fa-solid fa-user"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: -105px;">
-                        <li><a class="dropdown-item" href="index.html"> Switch to Buyer </a>
+                        <li><a class="dropdown-item" href="sellerLogin.html"> Switch to Buyer </a>
                         </li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout </a>
                         </li>
@@ -98,6 +98,88 @@
                             </p>
                         </a>
                     </li>
+                    <!-- 4 -->
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="toggleDropdown()">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <p>
+                                Order
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview-dropdown">
+                            <!-- 1 -->
+                            <li class="nav-item">
+                                <a href="pending.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Pending groups</p>
+                                </a>
+                            </li>
+                            <!-- 2 -->
+                            <li class="nav-item">
+                                <a href="earnings.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Earnings</p>
+                                </a>
+                            </li>
+                            <!-- 3 -->
+                            <li class="nav-item">
+                                <a href="progress.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>In progress</p>
+                                </a>
+                            </li>
+                            <!-- 4 -->
+                            <li class="nav-item">
+                                <a href="finished.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Finished</p>
+                                </a>
+                            </li>
+                            <!-- 5 -->
+                            <li class="nav-item">
+                                <a href="canceled.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Canceled</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 5 -->
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="toggleDropdown2()">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>
+                                Sales
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview-dropdown-2">
+                            <!-- 1 -->
+                            <li class="nav-item">
+                                <a href="sponsoredProd.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sponsored Products</p>
+                                </a>
+                            </li>
+                            <!-- 2 -->
+                            <li class="nav-item">
+                                <a href="articles.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Articles</p>
+                                </a>
+                            </li>
+                            <!-- 3 -->
+                            <li class="nav-item">
+                                <a href="salesHistory.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sales History</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -119,19 +201,31 @@
                         <div class="card w-100">
                             <div class="h-100 p-2 bg-light-pink">
                                 <ul class="ps-0">
-                                    <li class="list-item mb-3 list-style-none"><i class="fa-solid fa-circle-check text-green"></i> You have 48 hours to
+                                    <li class="list-item mb-3 list-style-none"><i
+                                            class="fa-solid fa-circle-check text-green"></i> You have 48 hours to
                                         accept or reject orders.</li>
-                                    <li class="list-item mb-3 list-style-none"><i class="fa-solid fa-circle-check text-green"></i> Once the order is finished, you can ask for you payment. Get it in only 10 working days.</li>
-                                    <li class="list-item mb-3 list-style-none"><i class="fa-solid fa-circle-check text-green"></i> You can connect with the advertiser in the order chat.</li>
-                                    <li class="list-item mb-3 list-style-none"><i class="fa-solid fa-circle-check text-green"></i> You have a deadline and an established time for each order. Do not forget to check it out!.</li>
-                                    <li class="list-item mb-3 list-style-none"><i class="fa-solid fa-circle-check text-green"></i> Change the price or your web data up to once a month.</li>
-                                    <li class="list-item mb-3 list-style-none"><i class="fa-solid fa-circle-check text-green"></i> Contact with Support whenever you need it and we answer you in less than 24 hours.</li>
+                                    <li class="list-item mb-3 list-style-none"><i
+                                            class="fa-solid fa-circle-check text-green"></i> Once the order is finished,
+                                        you can ask for you payment. Get it in only 10 working days.</li>
+                                    <li class="list-item mb-3 list-style-none"><i
+                                            class="fa-solid fa-circle-check text-green"></i> You can connect with the
+                                        advertiser in the order chat.</li>
+                                    <li class="list-item mb-3 list-style-none"><i
+                                            class="fa-solid fa-circle-check text-green"></i> You have a deadline and an
+                                        established time for each order. Do not forget to check it out!.</li>
+                                    <li class="list-item mb-3 list-style-none"><i
+                                            class="fa-solid fa-circle-check text-green"></i> Change the price or your
+                                        web data up to once a month.</li>
+                                    <li class="list-item mb-3 list-style-none"><i
+                                            class="fa-solid fa-circle-check text-green"></i> Contact with Support
+                                        whenever you need it and we answer you in less than 24 hours.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <a href="sellerHome.html" class="btn btn-info"><i class="fa-solid fa-arrow-right"></i> Finish</a>
+                        <a href="sellerHome.html" class="btn btn-info"><i class="fa-solid fa-arrow-right"></i>
+                            Finish</a>
                     </div>
                 </div>
                 <div class="col-0 col-md-4 col-lg-2 mt-3 h-full">
@@ -176,6 +270,14 @@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.nav-treeview-dropdown');
+            dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        }
+        function toggleDropdown2() {
+            var dropdown = document.querySelector('.nav-treeview-dropdown-2');
+            dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        }
     </script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

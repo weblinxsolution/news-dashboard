@@ -44,7 +44,7 @@
                         <i class="fa-solid fa-user"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: -105px;">
-                        <li><a class="dropdown-item" href="index.html"> Switch to Buyer </a>
+                        <li><a class="dropdown-item" href="sellerLogin.html"> Switch to Buyer </a>
                         </li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout </a>
                         </li>
@@ -98,6 +98,88 @@
                             </p>
                         </a>
                     </li>
+                    <!-- 4 -->
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="toggleDropdown()">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <p>
+                                Order
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview-dropdown">
+                            <!-- 1 -->
+                            <li class="nav-item">
+                                <a href="pending.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Pending groups</p>
+                                </a>
+                            </li>
+                            <!-- 2 -->
+                            <li class="nav-item">
+                                <a href="earnings.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Earnings</p>
+                                </a>
+                            </li>
+                            <!-- 3 -->
+                            <li class="nav-item">
+                                <a href="progress.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>In progress</p>
+                                </a>
+                            </li>
+                            <!-- 4 -->
+                            <li class="nav-item">
+                                <a href="finished.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Finished</p>
+                                </a>
+                            </li>
+                            <!-- 5 -->
+                            <li class="nav-item">
+                                <a href="canceled.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Canceled</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- 5 -->
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="toggleDropdown2()">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>
+                                Sales
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview-dropdown-2">
+                            <!-- 1 -->
+                            <li class="nav-item">
+                                <a href="sponsoredProd.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sponsored Products</p>
+                                </a>
+                            </li>
+                            <!-- 2 -->
+                            <li class="nav-item">
+                                <a href="articles.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Articles</p>
+                                </a>
+                            </li>
+                            <!-- 3 -->
+                            <li class="nav-item">
+                                <a href="salesHistory.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Sales History</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -134,13 +216,16 @@
                             <div class="col-12 col-md-6 col-lg-4">
                                 <div class="card">
                                     <div class=" bg-light-pink p-4 text-center">
-                                        <img src="assets/images/verify_website_code.png" class="w-auto mb-3" alt="image">
+                                        <img src="assets/images/verify_website_code.png" class="w-auto mb-3"
+                                            alt="image">
                                         <h3 class="mb-3">Code</h3>
                                         <p class="mb-2">Add this code between the head tags of your website:</p>
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-copy"></i></span>
-                                          </div>
+                                            <input type="text" class="form-control" placeholder="Recipient's username"
+                                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <span class="input-group-text" id="basic-addon2"><i
+                                                    class="fa-solid fa-copy"></i></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -148,9 +233,11 @@
                             <div class="col-12 col-md-6 col-lg-4">
                                 <div class="card">
                                     <div class=" bg-light-pink p-4 text-center">
-                                        <img src="assets/images/verify_website_server.png" class="w-auto mb-3" alt="image">
+                                        <img src="assets/images/verify_website_server.png" class="w-auto mb-3"
+                                            alt="image">
                                         <h3 class="mb-3">Server</h3>
-                                        <p class="mb-2">Download the file and upload it to the root folder of your website</p>
+                                        <p class="mb-2">Download the file and upload it to the root folder of your
+                                            website</p>
                                         <button class="btn btn-primary">Download</button>
                                     </div>
                                 </div>
@@ -159,7 +246,8 @@
                             <div class="col-12 col-md-6 col-lg-4">
                                 <div class="card">
                                     <div class=" bg-light-pink p-4 text-center">
-                                        <img src="assets/images/verify_website_analytics.png" class="w-auto mb-3" alt="image">
+                                        <img src="assets/images/verify_website_analytics.png" class="w-auto mb-3"
+                                            alt="image">
                                         <h3 class="mb-3">Analytics</h3>
                                         <p class="mb-2">Link your Analitycs account and verify your website</p>
                                         <button class="btn btn-warning">Connect</button>
@@ -169,13 +257,16 @@
                         </div>
 
                         <div class="mt-3 text-center">
-                            <p>Click on “Verify now” if you have done any of the three options to validate your account.</p>
+                            <p>Click on “Verify now” if you have done any of the three options to validate your account.
+                            </p>
                             <div class="mb-2">
                                 <button class="btn btn-success">Verify Now</button>
                                 <button type="button" class="btn btn-outline-secondary text-black">Verify later</button>
                             </div>
-                            <p>If you have any questions follow this guide where we explain step  by step how to verify your website. 
-                                If you <br>still cannot do it send us an email to and we will be pleased to help you..</p>
+                            <p>If you have any questions follow this guide where we explain step by step how to verify
+                                your website.
+                                If you <br>still cannot do it send us an email to and we will be pleased to help you..
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -220,6 +311,14 @@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.nav-treeview-dropdown');
+            dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        }
+        function toggleDropdown2() {
+            var dropdown = document.querySelector('.nav-treeview-dropdown-2');
+            dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+        }
     </script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
