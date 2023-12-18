@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
     <title>Dashboard</title>
+    <style>
+        .d-hidden{
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="over-hidden">
@@ -25,7 +30,8 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" id="sidebar-toggler" role="button"><i class="fas fa-bars"></i></a>
+                <a class="nav-link" data-widget="pushmenu" href="#" id="sidebar-toggler" role="button"><i
+                        class="fas text-white fa-bars"></i></a>
             </li>
         </ul>
 
@@ -62,8 +68,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-sidebar" id="main-sidebar">
         <!-- Brand Logo -->
         <a href="#" class="brand-link">
-            <img src="assets/images/hollow.png" alt="AdminLTE Logo" class="brand-image display-none img-circle elevation-3"
-                style="opacity: .8">
+            <img src="assets/images/hollow.png" alt="AdminLTE Logo"
+                class="brand-image display-none img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Logo here</span>
         </a>
 
@@ -103,14 +109,14 @@
                     </li>
                     <!-- 4 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown()">
+                        <a class="nav-link custom_dropdown">
                             <i class="fa-solid fa-newspaper"></i>
                             <p>
                                 Order
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview-dropdown">
+                        <ul id="orderDropdown" class="nav nav-treeview-dropdown d-hidden">
                             <!-- 1 -->
                             <li class="nav-item">
                                 <a href="pending.html" class="nav-link">
@@ -150,7 +156,7 @@
                     </li>
                     <!-- 5 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown2()">
+                        <a class="nav-link custom_dropdown">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p>
                                 Sales
@@ -185,9 +191,9 @@
 
     <!-- content start -->
     <section>
-        <div class="content-wrapper wrapper-adjust bg-sidebar">
+        <div class="content-wrapper wrapper-adjust">
             <div class="row mx-0">
-                <div class="col-12 col-md-8 col-lg-10 bg-dark">
+                <div class="col-12 col-md-8 col-lg-10">
                     <div class="wrapper-header">
                         <div class="container-fluid d-flex justify-content-between">
                             <h1 class="display-6">1. Enter URL</h1>
@@ -207,33 +213,33 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="url">URL of your website <span class="text-green">*</span></label>
+                            <label for="url">URL of your website <span class="text-black">*</span></label>
                             <input type="text" id="url" class="form-control" placeholder="http://www.pressrelease.com">
                         </div>
                         <div class="mb-3 d-flex justify-content-between">
                             <a href="" class="btn border text-black rounded"><i class="fa-solid fa-forward"></i>
                                 Skip</a>
-                            <a href="completeData.html" class="btn btn-info"><i class="fa-solid fa-arrow-right"></i>
+                            <a href="completeData.html" class="btn bg-sidebar"><i class="fa-solid fa-arrow-right"></i>
                                 Next</a>
                         </div>
                     </div>
 
                 </div>
-                <div class="col-0 col-md-4 col-lg-2 mt-3 h-full text-white">
+                <div class="col-0 col-md-4 col-lg-2 mt-3 h-full">
                     <div class="fw-bold">
-                        <span class="bg-green text-white rounded-circle pt-1 pb-1 pe-2 ps-2 me-2">1</span>
+                        <span class="bg-sidebar text-white circle-adj">1</span>
                         Enter the URL
                     </div>
                     <div class="mt-5">
-                        <span class="bg-grey text-white rounded-circle pt-1 pb-1 pe-2 ps-2 me-2">2</span>
+                        <span class="bg-grey text-white circle-adj">2</span>
                         Complete the data
                     </div>
                     <div class="mt-5">
-                        <span class="bg-grey text-white rounded-circle pt-1 pb-1 pe-2 ps-2 me-2">3</span>
+                        <span class="bg-grey text-white circle-adj">3</span>
                         Verify your website
                     </div>
                     <div class="mt-5">
-                        <span class="bg-grey text-white rounded-circle pt-1 pb-1 pe-2 ps-2 me-2">4</span>
+                        <span class="bg-grey text-white circle-adj">4</span>
                         Finished
                     </div>
                 </div>
@@ -248,58 +254,62 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-<!-- bootstrap 4 js -->
-<!-- Bootstrap 4 -->
-<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <!-- Bootstrap 4 -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- jQuery -->
-<script src="assets/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-    $(document).ready(function () {
-        $("#sidebar-toggler").click(function () {
-            $("#main-sidebar").toggleClass("sidebar-collapsed");
-            $(".content-wrapper").toggleClass("content-wrapper-collapsed");
-            $(".main-header").toggleClass("content-wrapper-collapsed");
+    <!-- jQuery -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+
+        $('.custom_dropdown').click(function () {
+            $(this).next().slideToggle();
+        })
+
+        $.widget.bridge('uibutton', $.ui.button)
+        $(document).ready(function () {
+            $("#sidebar-toggler").click(function () {
+                $("#main-sidebar").toggleClass("sidebar-collapsed");
+                $(".content-wrapper").toggleClass("content-wrapper-collapsed");
+                $(".main-header").toggleClass("content-wrapper-collapsed");
+            });
         });
-    });
-
-</script>
-<!-- Bootstrap 4 -->
-<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="assets/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="assets/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="assets/plugins/moment/moment.min.js"></script>
-<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="assets/js/adminlte.js"></script>
-<script src="assets/js/adminlte.js.map"></script>
-<script src="assets/js/adminlte.min.js"></script>
-<script src="assets/js/adminlte.min.js.map"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="assets/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="assets/js/pages/dashboard.js"></script>
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="assets/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="assets/plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="assets/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="assets/plugins/moment/moment.min.js"></script>
+    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="assets/js/adminlte.js"></script>
+    <script src="assets/js/adminlte.js.map"></script>
+    <script src="assets/js/adminlte.min.js"></script>
+    <script src="assets/js/adminlte.min.js.map"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="assets/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="assets/js/pages/dashboard.js"></script>
 </body>
 
 </html>

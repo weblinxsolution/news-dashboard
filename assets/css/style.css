@@ -106,9 +106,9 @@
   
   .sidebar-collapsed .nav-item i {
     margin: 0 !important;
-    padding: 15px !important;
+    padding: 15px 15px 15px 0px !important;
     font-size: 24px !important;
-    width: 50px !important;
+    width: 40px !important;
     text-align: center !important;
   }
   
@@ -133,11 +133,33 @@
   .mar-e {
     margin-right: 13px;
   }
+
+  .circle-adj {
+    padding: 3px;
+    border-radius: 26px;
+    padding-left: 9px;
+    padding-right: 9px;
+  }
   
 
 @media (min-width: 991px) {
     .w-lg-50 {
         width: 50%;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .content-wrapper {
+        margin-left: 71px !important;
+    }
+
+    .sidebar-collapse .main-sidebar {
+        margin-left: -179px !important;
+    }
+
+    .main-header {
+        margin-left: 71px !important;
     }
 }
 

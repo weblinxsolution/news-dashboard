@@ -25,7 +25,7 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" id="sidebar-toggler" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <a class="nav-link" data-widget="pushmenu" id="sidebar-toggler" href="#" role="button"><i class="fas text-white fa-bars"></i></a>
             </li>
         </ul>
 
@@ -103,7 +103,7 @@
                     </li>
                     <!-- 4 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown()">
+                        <a class="nav-link class">
                             <i class="fa-solid fa-newspaper"></i>
                             <p>
                                 Order
@@ -150,7 +150,7 @@
                     </li>
                     <!-- 5 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown2()">
+                        <a class="nav-link custom_dropdown">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p>
                                 Sales
@@ -186,10 +186,10 @@
 
     <!-- content start -->
     <section>
-        <div class="content-wrapper wrapper-adjust bg-dark">
-            <div class="container-fluid">
+        <div class="content-wrapper wrapper-adjust">
+            <div class="container-fluid pt-3">
                 <!-- content end -->
-                <table class="table table-dark table-striped">
+                <table class="table border">
                     <thead>
                         <tr>
                             <th scope="col" class="text-uppercase">date</th>
@@ -253,17 +253,17 @@
                         <div class="d-flex justify-content-end">
                             <ul class="list-style-none d-flex">
                                 <li class="mar-e">
-                                    <a href="#" class="text-green">Legal warning</a>
+                                    <a href="#" class="text-black">Legal warning</a>
                                 </li>
                                 <li class="mar-e">
-                                    <a href="#" class="text-green">Privacy Policy
+                                    <a href="#" class="text-black">Privacy Policy
                                     </a>
                                 </li>
                                 <li class="mar-e">
-                                    <a href="#" class="text-green">Cookies policy</a>
+                                    <a href="#" class="text-black">Cookies policy</a>
                                 </li>
                                 <li class="mar-e">
-                                    <a href="#" class="text-green">FAQ's</a>
+                                    <a href="#" class="text-black">FAQ's</a>
                                 </li>
                             </ul>
                         </div>
@@ -300,6 +300,10 @@
                 $(".main-header").toggleClass("content-wrapper-collapsed");
             });
         });
+
+        $('.custom_dropdown').click(function () {
+            $(this).next().slideToggle();
+        })
 
     </script>
     <!-- Bootstrap 4 -->

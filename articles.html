@@ -103,7 +103,7 @@
                     </li>
                     <!-- 4 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown()">
+                        <a class="nav-link custom_dropdown">
                             <i class="fa-solid fa-newspaper"></i>
                             <p>
                                 Order
@@ -150,7 +150,7 @@
                     </li>
                     <!-- 5 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown2()">
+                        <a class="nav-link custom_dropdown">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p>
                                 Sales
@@ -310,6 +310,10 @@
                 $(".main-header").toggleClass("content-wrapper-collapsed");
             });
         });
+
+        $('.custom_dropdown').click(function () {
+            $(this).next().slideToggle();
+        })
 
     </script>
     <!-- Bootstrap 4 -->

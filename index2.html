@@ -39,7 +39,7 @@
                 <button class="btn btn-primary"><i class="fa-regular fa-credit-card"></i> Recharge Balance</button>
             </li>
             <li class="nav-item me-3">
-                <button class="btn btn-info"><i class="fa-solid fa-address-card"></i> €5.00 </button>
+                <button class="btn bg-sidebar"><i class="fa-solid fa-address-card"></i> €5.00 </button>
             </li> -->
             <li class="nav-item me-5">
                 <div class="dropdown">
@@ -104,7 +104,7 @@
                     </li>
                     <!-- 4 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown()">
+                        <a class="nav-link custom_dropdown">
                             <i class="fa-solid fa-newspaper"></i>
                             <p>
                                 Order
@@ -151,7 +151,7 @@
                     </li>
                     <!-- 5 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown2()">
+                        <a class="nav-link custom_dropdown">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p>
                                 Sales
@@ -185,14 +185,14 @@
 
     <!-- content start -->
     <section>
-        <div class="content-wrapper wrapper-adjust bg-dark">
+        <div class="content-wrapper wrapper-adjust">
             <div class="wrapper-header">
                 <div class="container-fluid d-flex justify-content-between">
                     <h1 class="display-5">Website</h1>
                     <div class="my-auto">
 
                         <!-- modal1 start -->
-                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                        <button class="btn bg-sidebar" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                                 class="fa-solid fa-plane"></i> Turn vacation mode on</button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -225,7 +225,7 @@
                                             </div>
                                         </div>
                                         <div class="mx-auto text-center">
-                                            <button type="button" class="btn btn-danger"><i
+                                            <button type="button" class="btn bg-sidebar"><i
                                                     class="fa-solid fa-plane"></i> Turn vacation mode on</button>
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@
                         </div>
                         <!-- modal1 end -->
 
-                        <a href="addweb.html" class="btn btn-info"><i class="fa-solid fa-plus"></i> Add Web</a>
+                        <a href="addweb.html" class="btn bg-sidebar"><i class="fa-solid fa-plus"></i> Add Web</a>
                     </div>
                 </div>
             </div>
@@ -244,7 +244,7 @@
                     <div class="card-body">
 
                         <!-- table 1 -->
-                        <table class="table table-dark table-striped">
+                        <table class="table border">
                             <thead>
                                 <tr>
                                     <th scope="col">URL <i class="fa-solid fa-bars"></i></th>
@@ -335,17 +335,17 @@
                     <div class="d-flex justify-content-end">
                         <ul class="list-style-none d-flex">
                             <li class="mar-e">
-                                <a href="#" class="text-green">Legal warning</a>
+                                <a href="#" class="text-black">Legal warning</a>
                             </li>
                             <li class="mar-e">
-                                <a href="#" class="text-green">Privacy Policy
+                                <a href="#" class="text-black">Privacy Policy
                                 </a>
                             </li>
                             <li class="mar-e">
-                                <a href="#" class="text-green">Cookies policy</a>
+                                <a href="#" class="text-black">Cookies policy</a>
                             </li>
                             <li class="mar-e">
-                                <a href="#" class="text-green">FAQ's</a>
+                                <a href="#" class="text-black">FAQ's</a>
                             </li>
                         </ul>
                     </div>
@@ -390,6 +390,10 @@
                 $(".main-header").toggleClass("content-wrapper-collapsed");
             });
         });
+
+        $('.custom_dropdown').click(function () {
+            $(this).next().slideToggle();
+        })
 
     </script>
     <!-- Bootstrap 4 -->

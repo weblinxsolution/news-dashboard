@@ -38,13 +38,13 @@
                 <button class="btn btn-primary"><i class="fa-regular fa-credit-card"></i> Recharge Balance</button>
             </li>
             <li class="nav-item me-3">
-                <button class="btn btn-info"><i class="fa-solid fa-address-card"></i> €5.00 </button>
+                <button class="btn bg-sidebar"><i class="fa-solid fa-address-card"></i> €5.00 </button>
             </li> -->
             <li class="nav-item me-5">
                 <div class="dropdown">
                     <button class="btn bg-sidebar dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-user"></i>
+                        <i class="fa-solid text-white fa-user"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: -105px;">
                         <li><a class="dropdown-item" href="sellerlogin.html"> Switch to Buyer </a>
@@ -103,7 +103,7 @@
                     </li>
                     <!-- 4 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown()">
+                        <a class="nav-link custom_dropdown">
                             <i class="fa-solid fa-newspaper"></i>
                             <p>
                                 Order
@@ -150,7 +150,7 @@
                     </li>
                     <!-- 5 -->
                     <li class="nav-item">
-                        <a class="nav-link" onclick="toggleDropdown2()">
+                        <a class="nav-link custom_dropdown">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <p>
                                 Sales
@@ -186,9 +186,9 @@
 
     <!-- content start -->
     <section>
-        <div class="content-wrapper wrapper-adjust bg-sidebar">
+        <div class="content-wrapper wrapper-adjust">
             <div class="row mx-0">
-                <div class="col-12 col-md-8 col-lg-10 bg-dark">
+                <div class="col-12 col-md-8 col-lg-10">
                     <h4 class="mb-2">Great! In the next few days we will check your web and we will notify you in case
                         it is accepted.</h4>
                     <p>While you await, we can answer some frequent doubts and we give you some advices.</p>
@@ -198,47 +198,47 @@
                             <div class="h-100 p-2 bg-light-pink">
                                 <ul class="ps-0">
                                     <li class="list-item mb-3 list-style-none"><i
-                                            class="fa-solid fa-circle-check text-green"></i> You have 48 hours to
+                                            class="fa-solid fa-circle-check text-black"></i> You have 48 hours to
                                         accept or reject orders.</li>
                                     <li class="list-item mb-3 list-style-none"><i
-                                            class="fa-solid fa-circle-check text-green"></i> Once the order is finished,
+                                            class="fa-solid fa-circle-check text-black"></i> Once the order is finished,
                                         you can ask for you payment. Get it in only 10 working days.</li>
                                     <li class="list-item mb-3 list-style-none"><i
-                                            class="fa-solid fa-circle-check text-green"></i> You can connect with the
+                                            class="fa-solid fa-circle-check text-black"></i> You can connect with the
                                         advertiser in the order chat.</li>
                                     <li class="list-item mb-3 list-style-none"><i
-                                            class="fa-solid fa-circle-check text-green"></i> You have a deadline and an
+                                            class="fa-solid fa-circle-check text-black"></i> You have a deadline and an
                                         established time for each order. Do not forget to check it out!.</li>
                                     <li class="list-item mb-3 list-style-none"><i
-                                            class="fa-solid fa-circle-check text-green"></i> Change the price or your
+                                            class="fa-solid fa-circle-check text-black"></i>text-black Change the price or your
                                         web data up to once a month.</li>
                                     <li class="list-item mb-3 list-style-none"><i
-                                            class="fa-solid fa-circle-check text-green"></i> Contact with Support
+                                            class="fa-solid fa-circle-check text-black"></i> Contact with Support
                                         whenever you need it and we answer you in less than 24 hours.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <a href="sellerHome.html" class="btn btn-info"><i class="fa-solid fa-arrow-right"></i>
+                        <a href="sellerHome.html" class="btn bg-sidebar"><i class="fa-solid fa-arrow-right"></i>
                             Finish</a>
                     </div>
                 </div>
-                <div class="col-0 col-md-4 col-lg-2 mt-3 h-full text-white">
+                <div class="col-0 col-md-4 col-lg-2 mt-3 h-full">
                     <div class="fw-bold">
-                        <span class="bg-green text-white rounded-circle pt-1 pb-1 pe-2 ps-2 me-2">1</span>
+                        <span class="bg-sidebar text-white circle-adj">1</span>
                         Enter the URL
                     </div>
                     <div class="mt-5 fw-bold">
-                        <span class="bg-green text-white rounded-circle pt-1 pb-1 pe-2 ps-2 me-2">2</span>
+                        <span class="bg-sidebar text-white circle-adj">2</span>
                         Complete the data
                     </div>
                     <div class="mt-5 fw-bold">
-                        <span class="bg-green text-white rounded-circle pt-1 pb-1 pe-2 ps-2 me-2">3</span>
+                        <span class="bg-sidebar text-white circle-adj">3</span>
                         Verify your website
                     </div>
                     <div class="mt-5 fw-bold">
-                        <span class="bg-green text-white rounded-circle pt-1 pb-1 pe-2 ps-2 me-2">4</span>
+                        <span class="bg-sidebar text-white circle-adj">4</span>
                         Finished
                     </div>
                 </div>
@@ -273,6 +273,10 @@
                 $(".main-header").toggleClass("content-wrapper-collapsed");
             });
         });
+
+        $('.custom_dropdown').click(function () {
+            $(this).next().slideToggle();
+        })
 
     </script>
     <!-- Bootstrap 4 -->
