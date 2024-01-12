@@ -121,9 +121,10 @@
                             <i class="fa-solid fa-user"></i>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: -105px;">
-                            <li><a class="dropdown-item" href="sellerlogin.php"> Switch to Buyer </a>
-                            </li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i>
+                            {{-- <li><a class="dropdown-item" href="sellerlogin.php"> Switch to Buyer </a>
+                            </li> --}}
+                            <li><a class="dropdown-item" href="{{ Route('seller.logout') }}"><i
+                                        class="fa-solid fa-right-from-bracket"></i>
                                     Logout </a>
                             </li>
                         </ul>
@@ -151,7 +152,7 @@
 
                         <!-- 1 -->
                         <li class="nav-item">
-                            <a href="{{ Route('seller.index') }}" class="nav-link">
+                            <a href="{{ Route('seller.website') }}" class="nav-link">
                                 <i class="fa-solid fa-house"></i>
                                 <p>
                                     Home
@@ -159,7 +160,7 @@
                             </a>
                         </li>
                         <!-- 2 -->
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="index.php" class="nav-link">
                                 <i class="fa-solid fa-desktop"></i>
                                 <p>
@@ -254,7 +255,7 @@
                             </div>
                         </li>
                     </ul>
-                    </li>
+                    </li> --}}
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

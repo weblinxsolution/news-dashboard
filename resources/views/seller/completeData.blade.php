@@ -44,6 +44,18 @@
                         </div>
 
                         <div class="container-fluid">
+                            @if (session('error'))
+                                <div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    {{ session('error') }}
+                                </div>
+                            @endif
+                            @if (session('success'))
+                                <div class="alert alert-success alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                             <div class="mb-3">
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">
@@ -358,7 +370,8 @@
                                                 data-bs-toggle="tooltip" data-bs-placement="top"
                                                 title="Describe your website in a few words"></i>
                                         </label>
-                                        <select class="form-control" id="exampleFormControlSelect1" name="max_links" required>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="max_links"
+                                            required>
                                             <option value="1" selected>1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -376,7 +389,8 @@
                                                 title="Describe your website in a few words"></i>
                                         </label>
                                         <select class="js-example-basic-hide-search-multi js-states form-control"
-                                            id="js-example-basic-hide-search-multi" multiple="multiple" name="type_of_links[]" required>
+                                            id="js-example-basic-hide-search-multi" multiple="multiple"
+                                            name="type_of_links[]" required>
                                             <option value="Follow" selected>Follow</option>
                                             <option value="No follow">No Follow</option>
                                             <option value="Sponsored">Sponsored</option>
@@ -393,68 +407,30 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1"
-                                                value="Activism and NGOst" name="categories[]" checked>
-                                            <label class="form-check-label form_label" for="exampleCheck1">Activism and
-                                                NGOst</label>
+                                    @foreach ($categories as $catgy)
+                                        <div class="col-6 col-md-4 col-lg-3">
+                                            <div class="mb-3 form-check">
+                                                <input type="checkbox" class="form-check-input categ_"
+                                                    id="categories{{ $catgy->id }}" value="{{ $catgy->id }}"
+                                                    name="categories[]" required>
+                                                <label class="form-check-label form_label"
+                                                    for="categories{{ $catgy->id }}">{{ $catgy->name }}</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck2"
-                                                value="Animals" name="categories[]" checked>
-                                            <label class="form-check-label form_label" for="exampleCheck2">Animals</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck3"
-                                                value="Beauty" name="categories[]" checked>
-                                            <label class="form-check-label form_label" for="exampleCheck3">Beauty</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck4"
-                                                value="Celebrities" name="categories[]">
-                                            <label class="form-check-label form_label"
-                                                for="exampleCheck4">Celebrities</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck5"
-                                                value="Cinema and TV" name="categories[]">
-                                            <label class="form-check-label form_label" for="exampleCheck5">Cinema and
-                                                TV</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck6"
-                                                value="Computer and Programming" name="categories[]">
-                                            <label class="form-check-label form_label" for="exampleCheck6">Computer and
-                                                Programming</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck7"
-                                                value="Construction and Renovations" categories[]>
-                                            <label class="form-check-label form_label" for="exampleCheck7">Construction
-                                                and Renovations</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-3">
-                                        <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck8"
-                                                value="Cooking, Recipes and Gastronomy" name="categories[]">
-                                            <label class="form-check-label form_label" for="exampleCheck8">Cooking,
-                                                Recipes and Gastronomy</label>
-                                        </div>
-                                    </div>
+                                    @endforeach
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('.categ_').on('change', function() {
+                                                var checkedInputs = $('.categ_:checked');
+                                                if (checkedInputs.length >= 3) {
+                                                    $('.categ_:not(:checked)').attr('disabled', true);
+                                                    $('.categ_:not(:checked)').attr('required', false);
+                                                } else {
+                                                    $('.categ_:not(:checked)').attr('disabled', false);
+                                                }
+                                            });
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <!-- checkboxes end -->
@@ -470,11 +446,14 @@
                                                     title="Describe your website in a few words"></i>
                                             </label>
                                             <select class="js-example-basic-hide-search-multi js-states form-control"
-                                                id="js-example-basic-hide-search-multi-2" multiple="multiple" name="non_admitted[]">
-                                                <option value="Casino" selected>Casino</option>
-                                                <option value="Dating" selected>Dating</option>
-                                                <option value="Drug">Drug</option>
-                                                <option value="Escort">Escort</option>
+                                                id="js-example-basic-hide-search-multi-2" multiple="multiple"
+                                                name="non_admitted[]" required>
+                                                @isset($topics)
+                                                    @foreach ($topics as $tpc)
+                                                        <option value="{{ $tpc->id }}">{{ $tpc->topic }}
+                                                        </option>
+                                                    @endforeach
+                                                @endisset
                                             </select>
                                         </div>
 
@@ -498,15 +477,16 @@
                                                     data-bs-placement="top"
                                                     title="Describe your website in a few words"></i>
                                             </label>
-                                            <select class="form-control" name="sponsored"
-                                                id="exampleFormControlSelect1" required>
+                                            <select class="form-control" name="sponsored" id="exampleFormControlSelect1"
+                                                required>
                                                 <option value="1" selected>Always</option>
                                                 <option value="0">Only if it is noticed</option>
                                             </select>
                                         </div>
 
                                         <div class="mb-3 form-check mt-3">
-                                            <input type="checkbox" class="form-check-input" id="isPublishRelated" name="is_related_category" value="1" required checked>
+                                            <input type="checkbox" class="form-check-input" id="isPublishRelated"
+                                                name="is_related_category" value="1" required checked>
                                             <label class="form-check-label form_label" for="isPublishRelated">Do you
                                                 publish in related categories? <i class="fa-solid fa-info-circle"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"

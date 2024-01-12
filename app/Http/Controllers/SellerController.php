@@ -2,18 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
+use App\Models\Topics;
+use App\Models\User;
 use App\Models\WebsiteCategories;
 use App\Models\WebsiteNonAdmitted;
 use App\Models\Websites;
 use App\Models\WebsiteTypesAdmitted;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class SellerController extends Controller
 {
-    public function Index()
+    public function fakeUser()
+    {
+        $new = new User;
+        $new->name = "John Doe";
+        $new->email = "test@gmail.com";
+        $new->number = +12243254359;
+        $new->password = Hash::make(123456789);
+        $new->save();
+
+        return 'Super Admin Created';
+    }
+    public function website()
     {
         $title = 'Dashboard';
-        return view('seller.index', compact('title'));
+        $topic = Topics::all();
+        $websites = Websites::with('categories', 'non_admitteds', 'type_admitteds', 'traffic')->get();
+        return view('seller.index', compact('title', 'websites', 'topic'));
     }
 
     public function AddWeb()
@@ -39,10 +57,26 @@ class SellerController extends Controller
     public function AddWebComplete()
     {
         $title = 'Add Complete Date';
-        return view('seller.completeData', compact('title'));
+        $categories = Categories::all();
+        $topics = Topics::all();
+        return view('seller.completeData', compact('title', 'categories', 'topics'));
     }
     public function AddWebCompleteDb(Request $request)
     {
+
+        $request->validate([
+            'countries' => 'required',
+            'description' => 'required',
+            'max_links' => 'required',
+            'type_of_links' => 'required',
+            'non_admitted' => 'required',
+            'categories' => 'required',
+            'images_per_post' => 'required',
+            'sponsored' => 'required',
+            'is_publish_home' => 'required',
+            'is_related_category' => 'required',
+            'price' => 'required',
+        ]);
 
         $web = new Websites;
         $web->url = session()->get('web_url');
@@ -68,14 +102,14 @@ class SellerController extends Controller
         foreach ($request['categories'] as $catgy) {
             $category = new WebsiteCategories;
             $category->web_id = $web->id;
-            $category->name = $catgy;
+            $category->catgy_id = $catgy;
             $category->save();
         }
 
         foreach ($request['non_admitted'] as $adm) {
             $admitted = new WebsiteNonAdmitted;
             $admitted->web_id = $web->id;
-            $admitted->topic = $adm;
+            $admitted->topic_id = $adm;
             $admitted->save();
         }
 
@@ -89,6 +123,59 @@ class SellerController extends Controller
     public function Finish()
     {
         $title = 'Finish';
+
         return view('seller.finish', compact('title'));
+    }
+
+    public function EditWeb($id)
+    {
+        $title = 'Edit Website';
+        $websites = Websites::where('id', $id)->with('categories', 'non_admitteds', 'type_admitteds')->get();
+        return view('seller.EditWeb', compact('websites', 'title'));
+    }
+    public function WebDelete($id)
+    {
+        Websites::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Website Successfully Deleted!');
+    }
+
+
+    public function login()
+    {
+        $title = "Login";
+        $data = compact('title');
+        return view('seller.login')->with($data);
+    }
+
+    public function login_check(Request $request)
+    {
+        $request->validate([
+            "email" => "required|email",
+            "password" => "required"
+        ]);
+
+        $check = User::where("email", $request->email)->first();
+
+        if ($check) {
+
+            if (Hash::check($request->password, $check->password)) {
+
+                session()->put("user_id", $check->id);
+
+                return redirect()->route("seller.website");
+            } else {
+
+                return redirect()->back()->with("error", "Please provide valid credentials.");
+            }
+        } else {
+
+            return redirect()->back()->with("error", "Please provide valid credentials.");
+        }
+    }
+
+    public function logout()
+    {
+        session()->forget("user_id");
+        return redirect()->route("seller.login")->with("success", "Loggedout successfully !");
     }
 }

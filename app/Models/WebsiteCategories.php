@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class WebsiteCategories extends Model
 {
     use HasFactory;
+
+    public function catgyInfo()
+    {
+        return $this->belongsTo(Categories::class, "catgy_id", "id");
+    }
 }

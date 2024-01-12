@@ -8,18 +8,20 @@
                     <h3 class="font-weight-bold ml-lg-3 mb-0">Website</h3>
                 </div>
             </div>
-            @if (session('error'))
-                <div class="alert alert-danger alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    {{ session('error') }}
-                </div>
-            @endif
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    {{ session('success') }}
-                </div>
-            @endif
+            <div class="px-3">
+                @if (session('error'))
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{ session('error') }}
+                    </div>
+                @endif
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{ session('success') }}
+                    </div>
+                @endif
+            </div>
             <div class="container-fluid">
                 <div class="">
                     <div class="card-body">
@@ -28,15 +30,15 @@
                         <table class="table border">
                             <thead>
                                 <tr>
-                                    <th scope="col">URL <i class="fa-solid fa-bars"></i></th>
+                                    <th scope="col">URL</th>
                                     <th scope="col">Categories</th>
-                                    <th scope="col">Links <i class="fa-solid fa-arrows-up-down"></i></th>
-                                    <th scope="col">DR <i class="fa-solid fa-arrows-up-down"></i></th>
-                                    <th scope="col">DA <i class="fa-solid fa-arrows-up-down"></i></th>
-                                    <th scope="col">PA <i class="fa-solid fa-arrows-up-down"></i></th>
-                                    <th scope="col">CF <i class="fa-solid fa-arrows-up-down"></i></th>
-                                    <th scope="col">TF <i class="fa-solid fa-arrows-up-down"></i></th>
-                                    <th scope="col">CRedit <i class="fa-solid fa-arrows-up-down"></i></th>
+                                    <th scope="col">Links</i></th>
+                                    <th scope="col">DR</i></th>
+                                    <th scope="col">DA</i></th>
+                                    <th scope="col">PA</i></th>
+                                    <th scope="col">CF</i></th>
+                                    <th scope="col">TF</i></th>
+                                    <th scope="col">CRedit</i></th>
                                     <th scope="col">Analytics</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Actions</th>
@@ -59,102 +61,135 @@
 
                                                      ">
 
-                                                </i></td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>0</td>
+                                                </i>
+                                            </td>
+                                            <td>{{ isset($web->traffic[0]->dr) ? $web->traffic[0]->dr : '0' }}</td>
+                                            <td>{{ isset($web->traffic[0]->da) ? $web->traffic[0]->da : '0' }}</td>
+                                            <td>{{ isset($web->traffic[0]->pa) ? $web->traffic[0]->pa : '0' }}</td>
+                                            <td>{{ isset($web->traffic[0]->cf) ? $web->traffic[0]->cf : '0' }}</td>
+                                            <td>{{ isset($web->traffic[0]->tf) ? $web->traffic[0]->tf : '0' }}</td>
+                                            <td>{{ isset($web->traffic[0]->credit) ? $web->traffic[0]->credit : '0' }}</td>
+
                                             <td><i class="fa-solid fa-chart-simple"></i></td>
-                                            <td><i data-target="#infoModal" data-toggle="modal"
-                                                    class="fa-solid fa-info-circle cursor"></i></td>
+                                            <td>
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    {{-- <i data-target="#infoModal" data-toggle="modal"></i> --}}
+                                                    <span style="font-size: medium;"
+                                                        class="badge {{ $web->status == 1 ? 'badge-success' : 'badge-warning' }}">{{ $web->status == 1 ? 'Approved' : 'Pending' }}</span>
+                                                </div>
+                                            </td>
                                             <!-- Button trigger modal 1 -->
-                                            <td><button class="btn bg-blue mr-2" data-toggle="modal"
-                                                    data-target="#exampleModal1"><i class="fa-solid fa-eye"></i></button><button
-                                                    class="btn bg-blue mr-2"><i
-                                                        class="fa-solid fa-pen-to-square"></i></button><button
-                                                    class="btn bg-blue mr-2"><i class="fa-solid fa-trash"></i></button></td>
+                                            <td>
+                                                @if ($web->traffic->count() > 0)
+                                                    <button class="btn bg-blue mr-2" data-toggle="modal"
+                                                        data-target="#webDetail{{ $web->id }}"><i
+                                                            class="fa-solid fa-eye"></i></button>
+                                                @endif
 
 
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal1" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="d-flex justify-content-between">
-                                                                <div>
-                                                                    <div><span class="fw-bold">Medium: </span>Global
-                                                                        Chronicle
-                                                                        El Español</div>
-                                                                    <div><span class="fw-bold">URL: </span><a
-                                                                            href="https://cronicaglobal.elespanol.com/"
-                                                                            class="text-black">https://cronicaglobal.elespanol.com/</a>
-                                                                    </div>
-                                                                    <div><span class="fw-bold">Type: </span>Newspaper</div>
-                                                                    <div><span class="fw-bold">Country: </span>Spain</div>
-                                                                    <div><span class="fw-bold">Language: </span>IS</div>
-                                                                    <div><span class="fw-bold">Indicates Sponsored:
-                                                                        </span>Yeah
-                                                                    </div>
-                                                                    <div><span class="fw-bold">IP: </span>51.210.0.138</div>
-                                                                    <div><span class="fw-bold">Maximum Links: </span>2</div>
-                                                                </div>
-                                                                <div>
-                                                                    <div class="border rounded mb-1">
-                                                                        <div class="progress">
-                                                                            <div class="progress-bar" role="progressbar"
-                                                                                style="width: 25%" aria-valuenow="25"
-                                                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                                @if ($web->traffic->count() > 0)
+                                                    <a href="{{ Route('admin.approvedWebEdit', ['id' => $web->id]) }}"
+                                                        class="btn bg-primary mr-2"><i class="fa fa-pen"></i> Edit</a>
+                                                @else
+                                                    <a href="{{ Route('admin.approvedWeb', ['id' => $web->id]) }}"1
+                                                        class="btn bg-success mr-2"><i class="fa fa-check-circle"></i>
+                                                        Approved</a>
+                                                @endif
+
+                                            </td>
+
+                                            @if ($web->traffic->count() > 0)
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="webDetail{{ $web->id }}" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Website Detail
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="d-flex justify-content-between">
+                                                                    <div>
+                                                                        <div><span class="fw-bold">Medium: </span>
+                                                                            {{ $web->traffic[0]->medium }}</div>
+                                                                        <div><span class="fw-bold">URL: </span><a
+                                                                                href="{{ $web->url }}" target="_blank"
+                                                                                class="text-black">{{ $web->url }}</a>
                                                                         </div>
+                                                                        <div><span class="fw-bold">Type: </span>
+                                                                            {{-- @dd($web->categories) --}}
+                                                                            @foreach ($web->categories as $catgy)
+                                                                                <span
+                                                                                    class="badge badge-success">{{ $catgy->catgyInfo->name }}</span>
+                                                                            @endforeach
+                                                                        </div>
+                                                                        <div><span class="fw-bold">Country:
+                                                                            </span>{{ $web->country }}</div>
+                                                                        <div><span class="fw-bold">Language:
+                                                                            </span>{{ $web->traffic[0]->language }}</div>
+                                                                        <div><span class="fw-bold">Indicates Sponsored: </span>
+                                                                            {{ $web->traffic[0]->sponsorship }}
+                                                                        </div>
+                                                                        <div><span class="fw-bold">IP:
+                                                                            </span>{{ $web->traffic[0]->ipaddress }}</div>
+                                                                        <div><span class="fw-bold">Maximum Links:
+                                                                            </span>{{ $web->max_link }}</div>
                                                                     </div>
-                                                                    <!-- <div class="border rounded p-4">
-                                                                                                                                                                            <div class="progress">
-                                                                                                                                                                                <div class="progress-bar" role="progressbar"
-                                                                                                                                                                                    style="width: 25%" aria-valuenow="25"
-                                                                                                                                                                                    aria-valuemin="0" aria-valuemax="100"></div>
-                                                                                                                                                                            </div>
-                                                                                                                                                                        </div> -->
+                                                                    <div>
+                                                                        <div class="border rounded mb-1">
+                                                                            <div class="progress">
+                                                                                <div class="progress-bar" role="progressbar"
+                                                                                    style="width: 25%" aria-valuenow="25"
+                                                                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- <div class="border rounded p-4">
+                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="progress">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="progress-bar" role="progressbar"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    style="width: 25%" aria-valuenow="25"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                        </div> -->
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="mt-4">
-                                                                <label for="" class="mb-0">Accepted Projects</label>
-                                                                <div class="mt-2 border p-2">
-                                                                    <span class="badge bg-green text-white">Art and
-                                                                        Design</span> <span
-                                                                        class="badge bg-green text-white">Babbies and
-                                                                        Children</span> <span
-                                                                        class="badge bg-green text-white">Beauty</span>
-                                                                    <span class="badge bg-green text-white">Cinema and
-                                                                        TV</span>
-                                                                    <span class="badge bg-green text-white">Cooking and
-                                                                        gastronomy</span>
+                                                                <div class="mt-4">
+                                                                    <label for="" class="mb-0">Accepted
+                                                                        Projects</label>
+                                                                    <div class="mt-2 border p-2">
+                                                                        @foreach ($topic as $tpc)
+                                                                            @php
+                                                                                $admitted = $web->non_admitteds->where('topic_id', $tpc->id)->first();
+                                                                            @endphp
+
+                                                                            @if (!$admitted)
+                                                                                <span
+                                                                                    class="badge bg-green text-white">{{ $tpc->topic }}</span>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="mt-4">
-                                                                <label for="" class="mb-0">Rejected Projects</label>
-                                                                <div class="mt-2 border p-2">
-                                                                    <span class="badge badge-danger">Betting and
-                                                                        casino</span> <span class="badge badge-danger">Company
-                                                                        (Advertising)
-                                                                    </span> <span class="badge badge-danger">Dating</span>
-                                                                    <span class="badge badge-danger">News and
-                                                                        Politics</span>
-                                                                    <span class="badge badge-danger">Others</span>
+                                                                <div class="mt-4">
+                                                                    <label for="" class="mb-0">Rejected
+                                                                        Projects</label>
+                                                                    <div class="mt-2 border p-2">
+                                                                        @foreach ($web->non_admitteds as $compare)
+                                                                            <span class="badge bg-danger text-white">
+                                                                                {{ $compare->topicInfo->topic }}
+                                                                            </span>
+                                                                        @endforeach
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            @endif
+
                                             <div class="modal fade" id="infoModal" tabindex="-1"
                                                 aria-labelledby="infoModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -223,7 +258,6 @@
             // Alert the copied text
             alert("Copied the Code: " + copyText.value);
         }
-
     </script>
 
 

@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <a href="{{ Route('seller.index') }}" class="btn bg-sidebar"><i class="fa-solid fa-arrow-right"></i>
+                        <a href="{{ Route('seller.website') }}" class="btn bg-sidebar"><i class="fa-solid fa-arrow-right"></i>
                             Finish</a>
                     </div>
                 </div>

@@ -30,7 +30,7 @@
 
                                     <input type="url" class="form-control" id="validationDefaultUsername"
                                         aria-describedby="inputGroupPrepend2" placeholder="http://www.example.com"
-                                        name="url">
+                                        name="url" required>
                                 </div>
                             </div>
                             @if (session('error'))
@@ -46,10 +46,10 @@
                                 </div>
                             @endif
                             <div class="mb-3 d-flex justify-content-between">
-                                <button type="submit" class="btn border text-black rounded"><i
+                                {{-- <button type="submit" class="btn border text-black rounded"><i
                                         class="fa-solid fa-forward"></i>
-                                    Skip</button>
-                                <button type="submit" class="btn bg-sidebar"><i class="fa-solid fa-arrow-right"></i>
+                                    Skip</button> --}}
+                                <button type="submit" class="btn bg-sidebar ml-auto"><i class="fa-solid fa-arrow-right"></i>
                                     Next</button>
                             </div>
                         </div>
